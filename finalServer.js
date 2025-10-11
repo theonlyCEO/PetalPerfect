@@ -10,13 +10,20 @@ const uri = process.env.MONGODB_URI;
 app.use(express.json());
 app.use(cors({
   origin: [
-    "http://localhost:5173", // Keep for local development
-    "http://www.petalperfect.com.s3-website-us-east-1.amazonaws.com" // Allow S3 bucket
+    "http://localhost:5173", 
+    "http://www.petalperfect.com.s3-website-us-east-1.amazonaws.com"
   ],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
 }));
+
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "http://localhost:5173");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  next();
+});
 
 let client, db;
 
@@ -34,16 +41,16 @@ async function connectToMongo() {
 
 // 10 possible profile pictures
 const avatarChoices = [
-  "https://4kwallpapers.com/images/walls/thumbs/23992.jpg",
-  "https://4kwallpapers.com/images/walls/thumbs/23893.jpg",
-  "https://4kwallpapers.com/images/walls/thumbs/23902.jpg",
-  "https://4kwallpapers.com/images/walls/thumbs/23991.jpg",
-  "https://4kwallpapers.com/images/walls/thumbs/5658.jpg",
-  "https://4kwallpapers.com/images/walls/thumbs/1679.jpg",
-  "https://4kwallpapers.com/images/walls/thumbs/14938.jpg",
-  "https://4kwallpapers.com/images/walls/thumbs/4289.jpg",
-  "https://4kwallpapers.com/images/walls/thumbs_3t/4049.jpg",
-  "https://4kwallpapers.com/images/walls/thumbs/2044.jpg"
+  "https://randomuser.me/api/portraits/women/1.jpg",
+  "https://randomuser.me/api/portraits/men/1.jpg",
+  "https://randomuser.me/api/portraits/women/2.jpg",
+  "https://randomuser.me/api/portraits/men/2.jpg",
+  "https://randomuser.me/api/portraits/women/3.jpg",
+  "https://randomuser.me/api/portraits/men/3.jpg",
+  "https://randomuser.me/api/portraits/women/4.jpg",
+  "https://randomuser.me/api/portraits/men/4.jpg",
+  "https://randomuser.me/api/portraits/women/5.jpg",
+  "https://randomuser.me/api/portraits/men/5.jpg"
 ];
 
 // USERS
@@ -179,7 +186,7 @@ app.put("/users/:id", async (req, res) => {
   }
 });
 
-// 🔒 Password change endpoint
+// 🔒 NEW: Password change endpoint
 app.put("/users/:id/password", async (req, res) => {
   try {
     const { id } = req.params;
@@ -222,7 +229,7 @@ app.put("/users/:id/password", async (req, res) => {
   }
 });
 
-// 📊 Export user data (GDPR compliance)
+// 📊 NEW: Export user data (GDPR compliance)
 app.get("/users/:id/export", async (req, res) => {
   try {
     const { id } = req.params;
@@ -264,7 +271,7 @@ app.get("/users/:id/export", async (req, res) => {
   }
 });
 
-// 🗑️ Delete user account (with all related data)
+// 🗑️ NEW: Delete user account (with all related data)
 app.delete("/users/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -405,7 +412,7 @@ app.get("/orders", async (req, res) => {
   }
 });
 
-// Get user statistics
+// 📊 NEW: Get user statistics
 app.get("/users/:id/stats", async (req, res) => {
   try {
     const { id } = req.params;
