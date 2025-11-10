@@ -11,15 +11,21 @@ app.use(express.json());
 app.use(cors({
   origin: (origin, callback) => {
     const allowedOrigins = [
-      "http://localhost:5173",
-      "http://petalperfect.co.za",
-      "http://www.petalperfect.co.za",
-      "http://www.petalperfect.com.s3-website-us-east-1.amazonaws.com",
-      "http://www.petalperfect.com.s3-website-us-east-1.amazonaws.com/#",
-      "http://www.petalperfect.co.za.s3-website-us-east-1.amazonaws.com",
-      "https://www.petalperfect.com.s3-website-us-east-1.amazonaws.com",
-      "https://www.petalperfect.co.za.s3-website-us-east-1.amazonaws.com"
-    ];
+  "http://localhost:5173",
+
+  // Custom domain
+  "http://petalperfect.co.za",
+  "https://petalperfect.co.za",
+  "http://www.petalperfect.co.za",
+  "https://www.petalperfect.co.za",
+
+  // S3 hosting URLs
+  "http://petalperfect.co.za.s3-website-us-east-1.amazonaws.com",
+  "https://petalperfect.co.za.s3-website-us-east-1.amazonaws.com",
+  "http://www.petalperfect.co.za.s3-website-us-east-1.amazonaws.com",
+  "https://www.petalperfect.co.za.s3-website-us-east-1.amazonaws.com"
+];
+
 
     // allow requests with no origin (mobile apps, curl, etc.)
     if (!origin) return callback(null, true);
