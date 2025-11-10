@@ -4,6 +4,7 @@ const cors = require("cors");
 const { MongoClient, ObjectId } = require("mongodb");
 const base64 = require("base-64");
 const app = express();
+
 const PORT = process.env.PORT || 3000;
 const uri = process.env.MONGODB_URI;
 
@@ -151,7 +152,11 @@ app.get("/users/:id", async (req, res) => {
 app.get("/users", async (req, res) => {
   try {
     const { email } = req.query;
-    if (!email) return res.status(400).json({ message: "Email required" });
+   if (!email) {
+  const users = await db.collection("users").find().toArray();
+  return res.json(users);
+}
+
     const user = await db.collection("users").findOne({ email });
     if (!user) return res.status(404).json({ message: "User not found" });
     res.json(user);

@@ -1,0 +1,102 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-10-19T14:23:58.197Z",
+    "end": "2025-10-19T14:23:59.050Z",
+    "duration": 853,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "33065807-ea43-4ff1-87e1-bb2957456014",
+      "title": "",
+      "fullFile": "C:\\Users\\USER\\OneDrive\\Desktop\\week 6 assignment\\back-endpoints\\test\\post_request.js",
+      "file": "\\post_request.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "06f2bf7e-7c38-4945-9372-fa56c15bf9df",
+          "title": "POST API Request Tests",
+          "fullFile": "C:\\Users\\USER\\OneDrive\\Desktop\\week 6 assignment\\back-endpoints\\test\\post_request.js",
+          "file": "\\post_request.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should be able to post  details",
+              "fullTitle": "POST API Request Tests should be able to post  details",
+              "timedOut": false,
+              "duration": 682,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const res = await axios.post('http://localhost:3000/products', \n   {\n  \n  \"title\": \"Daisy Bouquet\",\n  \"description\": \"A fresh and vibrant daisy bouquet, perfect for any occasion.\",\n  \"price\": 13.44,\n  \"rating\": 4.9,\n  \"quantity\": 48,\n  \"image\": \"https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSqffaRLqZakHA-ko-eaRvH7shSH8AR0oe5baC3GvLNgoWSz7om7jokL-2a57L3TlOzF-iVOOFYzB5B2Xmf9JaMmebA_j9iOnwvA2d04fAOe1ZKHGezw2XBqQ\",\n  \"category\": \"Flowers\",\n  \"sku\": \"FLW006\",\n  \"inStock\": true,\n  \"details\": {\n\"color\": \"Yellow\",\n\"size\": \"Small\",\n\"freshness\": \"3 Days\",\n\"origin\": \"Local Farm\"\n  }\n}\n);\nconsole.log(res.data);",
+              "err": {},
+              "uuid": "b9388a7d-5572-4896-87c9-9fb13e36253d",
+              "parentUUID": "06f2bf7e-7c38-4945-9372-fa56c15bf9df",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b9388a7d-5572-4896-87c9-9fb13e36253d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 682,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 30000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 30000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.7.4"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report_",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportFilename": "report_"
+      },
+      "version": "6.3.0"
+    }
+  }
+}

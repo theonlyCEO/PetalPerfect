@@ -1,0 +1,100 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-10-19T17:23:19.566Z",
+    "end": "2025-10-19T17:23:20.429Z",
+    "duration": 863,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f18cf990-92ca-4bce-ad62-7dcd59001421",
+      "title": "",
+      "fullFile": "C:\\Users\\USER\\OneDrive\\Desktop\\week 6 assignment\\back-endpoints\\test\\get_request.js",
+      "file": "\\get_request.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "af3827be-57eb-4cd0-8df7-07ac56f93b88",
+          "title": "API request tests",
+          "fullFile": "C:\\Users\\USER\\OneDrive\\Desktop\\week 6 assignment\\back-endpoints\\test\\get_request.js",
+          "file": "\\get_request.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should be able to get user list",
+              "fullTitle": "API request tests should be able to get user list",
+              "timedOut": false,
+              "duration": 834,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const res = await axios.get('http://localhost:3000/products',\n    \n       \n    \n);\nconsole.log(res.data);",
+              "err": {},
+              "uuid": "e1b6eae4-cea9-4f73-8cb0-68b959ea0a63",
+              "parentUUID": "af3827be-57eb-4cd0-8df7-07ac56f93b88",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e1b6eae4-cea9-4f73-8cb0-68b959ea0a63"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 834,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.7.4"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.3.0"
+    }
+  }
+}
