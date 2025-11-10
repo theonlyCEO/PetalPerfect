@@ -10,6 +10,7 @@ const uri = process.env.MONGODB_URI;
 app.use(express.json());
 app.use(cors({
   origin: [
+    'http://www.petalperfect.co.za.s3-website-us-east-1.amazonaws.com',
      "http://localhost:5173",
     "http://petalperfect.co.za",
     "http://www.petalperfect.co.za",
